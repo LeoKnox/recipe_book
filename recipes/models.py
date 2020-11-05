@@ -7,4 +7,4 @@ class Recipe(models.Model):
     cook_time = models.IntegerField()
 
     def __str__(self):
-        return self.recipe_text
+        return self.name
