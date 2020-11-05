@@ -4,7 +4,7 @@ from django.template import loader
 from .models import Recipe
 
 def index(request):
-    recipes_list = Recipe.objects.value()
+    recipes_list = Recipe.objects.values()
     template = loader.get_template('recipes/index.html')
     context = {
         'recipes_list': recipes_list,
