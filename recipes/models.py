@@ -5,3 +5,6 @@ class Recipe(models.Model):
     ingredients = models.TextField()
     directions = models.TextField()
     cook_time = models.IntegerField()
+
+    def __str__(self):
+        return self.recipe_text
