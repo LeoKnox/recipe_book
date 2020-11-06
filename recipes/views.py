@@ -9,4 +9,7 @@ def index(request):
     context = {
         'recipes_list': recipes_list,
     }
-    return HttpResponse(template.render(context, request))
+    return render(request, 'recipes/index.html', context)
+
+def detail(request, recipe_id):
+    return HttpResponse("yo %s" % recipe_id)
