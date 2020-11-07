@@ -2,8 +2,10 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="" method="post">
+<form action="/recipes/" method="post">
     {% csrf_token %}
     <label>Name: </label>
     <input type="input" name="name" value="{{ recipe.id }}">
+
+    <input type="submit" value="Store">
 </form>
