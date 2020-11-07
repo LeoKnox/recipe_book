@@ -2,16 +2,20 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="/recipes/" method="post">
+<form action="/" method="post">
     {% csrf_token %}
-    <label>Name: </label>
-    <input type="input" name="name" value="{{ recipe.name }}">
-    <label>Ingredients: </label>
-    <input type="textbox" name="ingredients" value="{{ recipe.ingredients }}">
-    <label>Directions: </label>
-    <input type="textbox" name="directions" value="{{ recipe.directions }}">
-    <label>Cook Time: </label>
+    <p>Name: </p>
+    <input type="text" name="name" value="{{ recipe.name }}">
+    <br>
+    <p>Ingredients: </p>
+    <input type="text" name="ingredients" value="{{ recipe.ingredients }}">
+    <br>
+    <p>Directions: </p>
+    <input type="text" name="directions" value="{{ recipe.directions }}">
+    <br>
+    <p>Cook Time(in minutes): </p>
     <input type="number" name="cook_time" value="{{ recipe.cook_time }}">
+    <br>
 
     <input type="submit" value="Store">
 </form>
