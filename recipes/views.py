@@ -11,5 +11,9 @@ def index(request):
     }
     return render(request, 'recipes/index.html', context)
 
+def create(request):
+    form = Recipe.objects.values()
+    return render(request, 'recipes/create.html', {})
+
 def detail(request, recipe_id):
     return HttpResponse("yo %s" % recipe_id)
