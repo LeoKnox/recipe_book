@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from django.template import loader
+from recipes.forms import RecipeForm
 
 from .models import Recipe
 
@@ -12,7 +13,7 @@ def index(request):
     return render(request, 'recipes/index.html', context)
 
 def create(request):
-    form = Recipe.objects.values()
+    recipe = Recipeform(request.POST or None)
     return render(request, 'recipes/create.html', {})
 
 def detail(request, recipe_id):
