@@ -1,21 +1,6 @@
 <h1>Add Recipe</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-<form action="/" method="post">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <p>Name: </p>
-    <input type="text" name="name" value="{{ recipe.name }}">
-    <br>
-    <p>Ingredients: </p>
-    <input type="text" name="ingredients" value="{{ recipe.ingredients }}">
-    <br>
-    <p>Directions: </p>
-    <input type="text" name="directions" value="{{ recipe.directions }}">
-    <br>
-    <p>Cook Time(in minutes): </p>
-    <input type="number" name="cook_time" value="{{ recipe.cook_time }}">
-    <br>
-
-    <input type="submit" value="Store">
+    {{ form.as_p }}
 </form>
