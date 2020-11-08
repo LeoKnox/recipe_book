@@ -14,7 +14,11 @@ def index(request):
 
 def create(request):
     recipe = Recipeform(request.POST or None)
-    return render(request, 'recipes/create.html', {})
+    if form.is_valid():
+        form.save()
+        return redirect('/index/')
+    context['form'] = form
+    return render(request, 'recipes/create.html', context)
 
 def detail(request, recipe_id):
     return HttpResponse("yo %s" % recipe_id)
