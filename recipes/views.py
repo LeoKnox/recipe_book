@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.template import loader
 from recipes.forms import RecipeForm
 
@@ -13,7 +13,8 @@ def index(request):
     return render(request, 'recipes/index.html', context)
 
 def create(request):
-    recipe = Recipeform(request.POST or None)
+    context = {}
+    form = RecipeForm(request.POST or None)
     if form.is_valid():
         form.save()
         return redirect('/index/')
