@@ -3,9 +3,9 @@
 {% if recipes_list %}
     <ul>
         {% for recipe in recipes_list %}
-            <li><a href="{% url 'recipes:detail' recipe.id %}">{{ recipe.name }}</a></li>
+            <li><a href="{% url 'recipes:detail' recipe.id %}">{{ recipe.name }}</a>
+            <button>Edit</button><button>Delete</button></li>
         {% endfor %}
-        <li><button>Edit</button><button>Delete</button></li>
     </ul>
 {% else %}
     <h3>No recipes go learn!</h3>
