@@ -17,7 +17,7 @@ def create(request):
     form = RecipeForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/index/')
+        return redirect('index/')
     context['form'] = form
     return render(request, 'recipes/create.html', context)
 
