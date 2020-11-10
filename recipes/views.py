@@ -23,3 +23,6 @@ def create(request):
 
 def detail(request, recipe_id):
     return HttpResponse("yo %s" % recipe_id)
+
+def delete(request, recipe_id):
+    return redirct('/index')
