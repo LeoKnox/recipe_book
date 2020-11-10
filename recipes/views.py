@@ -25,4 +25,5 @@ def detail(request, recipe_id):
     return HttpResponse("yo %s" % recipe_id)
 
 def delete(request, recipe_id):
-    return redirct('/index')
+    Recipe.objects.filter(id=recipe_id).delete()
+    return redirect('/index/')
