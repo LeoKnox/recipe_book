@@ -21,6 +21,9 @@ def create(request):
     context['form'] = form
     return render(request, 'recipes/create.html', context)
 
+def edit(request):
+    return render(request, 'recipes/edit.html', {})
+
 def detail(request, recipe_id):
     return HttpResponse("yo %s" % recipe_id)
 
