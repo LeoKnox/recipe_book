@@ -12,5 +12,5 @@ class RecipeForm(forms.ModelForm):
             'cook_time',
         ]
         labels = {
-            'cook_time': 'cooking time'
+            'cook_time': 'Cook Time(in minutes)'
         }
