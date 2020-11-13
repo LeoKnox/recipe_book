@@ -22,6 +22,23 @@ def create(request):
     return render(request, 'recipes/create.html', context)
 
 def edit(request, recipe_id):
+    edit_room = RecipeForm(request.POST or None)
+    if edit_room.is_valid():
+        update = Room.objects.get(id = recipe_id)
+        update.name = request.POST.get('name')
+        update.ingredients = request.POST.get('ingredients')
+        update.directions = request.POST.get('directions')
+        update.cook_time = request.POST.get('cook_time')
+        update.save()
+        return redirect('/index/')
+    recipe = Recipe.objects.get(id = recipe_id)
+    recipe_data = {
+        'name': recipe.name,
+        'ingredients': recipe.ingredients,
+        'directions': recipe.directions,
+        'cook_time': recipe.cook_time
+    }
+    form = RecipeForm(initial=recipe_data)
     return render(request, 'recipes/edit.html', {})
 
 def detail(request, recipe_id):
