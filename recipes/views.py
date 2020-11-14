@@ -42,7 +42,8 @@ def edit(request, recipe_id):
     return render(request, 'recipes/edit.html', {'form': form})
 
 def detail(request, recipe_id):
-    return render(request, 'recipes/detail.html', {})
+    context = Recipe.objects.get(id = recipe_id)
+    return render(request, 'recipes/detail.html', {'context': context})
 
 def delete(request, recipe_id):
     Recipe.objects.filter(id=recipe_id).delete()
