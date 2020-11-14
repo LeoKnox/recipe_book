@@ -42,7 +42,7 @@ def edit(request, recipe_id):
     return render(request, 'recipes/edit.html', {'form': form})
 
 def detail(request, recipe_id):
-    return HttpResponse("yo %s" % recipe_id)
+    return render(request, 'recipes/detail.html', {})
 
 def delete(request, recipe_id):
     Recipe.objects.filter(id=recipe_id).delete()
