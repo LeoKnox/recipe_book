@@ -10,6 +10,7 @@ class RecipeForm(forms.ModelForm):
             'ingredients',
             'directions',
             'cook_time',
+            'servings',
         ]
         labels = {
             'cook_time': 'Cook Time(in minutes)'
