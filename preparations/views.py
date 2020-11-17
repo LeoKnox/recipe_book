@@ -1,4 +1,4 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-    return HttpResponse("new app added")
+    return render(request, 'preparations/index.html')
