@@ -1,5 +1,7 @@
 <h1>Prepare stuff here</h1>
 
-<p>Prepartation: </p>
-<p>Directions: </p>
-<p>Tools: </p>
+{% for prep in prep_data %}
+    <p>Prepartation: {{ prep.prep }}</p>
+    <p>Directions: {{ prep.directions }}</p>
+    <p>Tools: {{ prep.tools }}</p>
+{% endfor %}
