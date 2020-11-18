@@ -5,4 +5,6 @@
     <p>Directions: {{ prep.directions }}</p>
     <p>Tools: {{ prep.tools }}</p>
 {% endfor %}
-<p>What the ... {{ test_data }}</p>
+{% for recipe in recipe_data %}
+    <p>Recipe Name: {{ recipe.name }}</p>
+{% endfor %}
