@@ -5,6 +5,9 @@
     <p>Directions: {{ prep.directions }}</p>
     <p>Tools: {{ prep.tools }}</p>
 {% endfor %}
+
 {% for recipe in recipe_data %}
     <p>Recipe Name: {{ recipe.id }}:{{ recipe.name }}</p>
 {% endfor %}
+
+{{ recipe_prep.prep_name }}
